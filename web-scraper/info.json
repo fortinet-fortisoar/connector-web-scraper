@@ -2,8 +2,9 @@
     "name": "web-scraper",
     "version": "1.0.0",
     "label": "Web Scraper",
+    "cs_approved": false,
     "description": "Parses URL Content",
-    "publisher": "Fortinet CSE",
+    "publisher": "github.com/ftnt-cse",
     "icon_small_name": "small_icon.png",
     "icon_large_name": "large_icon.png",
     "configuration": {
