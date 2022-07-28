@@ -1,0 +1,56 @@
+{
+    "name": "web-scraper",
+    "version": "1.0.0",
+    "label": "Web Scraper",
+    "description": "Parses URL Content",
+    "publisher": "Fortinet CSE",
+    "icon_small_name": "small_icon.png",
+    "icon_large_name": "large_icon.png",
+    "configuration": {
+    },
+    "operations": [
+        {
+            "description": "Opens a URL and download its content",
+            "operation": "get_web_page_source",
+            "annotation": "get_web_page_source",
+            "title": "Get Web Page Source",
+            "parameters": [
+                {
+                    "title": "URL",
+                    "name": "url",
+                    "type": "text",
+                    "visible": true,
+                    "editable": true,
+                    "required": true
+                }
+            ],
+            "output_schema": {
+                "code_output": {}
+            },
+            "enabled": true
+        },
+        {
+            "description": "Takes a screenshot of a web page",
+            "operation": "get_screenshot",
+            "annotation": "get_screenshot",
+            "title": "Get Web Page Screenshot",
+            "parameters": [
+                {
+                    "title": "URL",
+                    "name": "url",
+                    "type": "text",
+                    "visible": true,
+                    "editable": true,
+                    "required": true
+                }
+            ],
+            "output_schema": {
+                "code_output": {}
+            },
+            "enabled": true
+        }        
+    ],
+    "category": "utilities",
+    "active": true,
+    "cs_compatible": true
+}
