@@ -44,7 +44,7 @@ def selenium_init():
         options.add_argument('window-size=1024x768')
         options.add_argument('--no-sandbox')
 
-        return webdriver.Chrome(chrome_options=options, executable_path=chromedriver_path, service_args=['--verbose', '--log-path=/tmp/chromedriver.log'])
+        return webdriver.Chrome(chrome_options=options, executable_path=chromedriver_path)
     except Exception as exp:
         logger.exception('Error Initiating WebDriver {}'.format(exp))
         raise ConnectorError('Error Initiating WebDriver {}'.format(exp))    
