@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 logger = get_logger('web_scraper')
+PAGE_LOAD_TIMEOUT = 20
 
 def url_parser(params):
     url = params.get('url')
@@ -53,6 +54,7 @@ def get_web_page_source(config, params):
         url = url_parser(params)
         driver = selenium_init()
         driver.get(url)
+        driver.set_page_load_timeout(PAGE_LOAD_TIMEOUT)
         page_source = driver.page_source
         driver.quit()
         return page_source
@@ -68,6 +70,7 @@ def get_screenshot(config, params):
         driver = selenium_init()
         file_path = '/tmp/{0}_{1}.png'.format(filename,arrow.get().int_timestamp)
         driver.get(url)
+        driver.set_page_load_timeout(PAGE_LOAD_TIMEOUT)
         driver.save_screenshot(file_path)
         driver.quit()
         return handle_upload_file_to_cyops(file_path)
