@@ -32,9 +32,7 @@ def handle_upload_file_to_cyops(file_path):
         raise ConnectorError('An exception occurred {0}'.format(str(err)))
 
 def selenium_init():
-    try:    
-        connector_dir = os.path.dirname(os.path.realpath(__file__))
-        chromedriver_path = connector_dir + "/chromedriver"        
+    try:
         options = Options()
         options.binary_location = "/opt/google/chrome/google-chrome"
         options.add_argument('--headless')
@@ -43,8 +41,7 @@ def selenium_init():
         options.add_argument('--disable-dev-shm-usage')
         options.add_argument('window-size=1024x768')
         options.add_argument('--no-sandbox')
-
-        return webdriver.Chrome(chrome_options=options, executable_path=chromedriver_path)
+        return webdriver.Chrome(options=options)
     except Exception as exp:
         logger.exception('Error Initiating WebDriver {}'.format(exp))
         raise ConnectorError('Error Initiating WebDriver {}'.format(exp))    
