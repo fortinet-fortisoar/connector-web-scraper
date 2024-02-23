@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "label": "Web Scraper",
     "cs_approved": false,
-    "description": "Parses URL Content",
+    "category": "utilities",
+    "cs_compatible": true,
+    "description": "Web scraping is data scraping used for extracting data from websites. This connector facilitates automated operations related to extracting data from websites.",
     "publisher": "Fortinet CSE",
     "icon_small_name": "small_icon.png",
     "icon_large_name": "large_icon.png",
@@ -11,7 +13,7 @@
     },
     "operations": [
         {
-            "description": "Opens a URL and download its content",
+            "description": "Extract the source code of the web page for the given URL",
             "operation": "get_web_page_source",
             "annotation": "get_web_page_source",
             "title": "Get Web Page Source",
@@ -19,6 +21,8 @@
                 {
                     "title": "URL",
                     "name": "url",
+                    "description": "Provide the URL of the web page for which you would like to extract a web page source code",
+                    "tooltip": "Provide the URL of the web page for which you would like to extract a web page source code",
                     "type": "text",
                     "visible": true,
                     "editable": true,
@@ -31,7 +35,7 @@
             "enabled": true
         },
         {
-            "description": "Takes a screenshot of a web page",
+            "description": "Takes a screenshot of a web page and creates an attachment in the FortiSOAR Attachment module",
             "operation": "get_screenshot",
             "annotation": "get_screenshot",
             "title": "Get Web Page Screenshot",
@@ -40,6 +44,8 @@
                     "title": "URL",
                     "name": "url",
                     "type": "text",
+                    "description": "Provide the URL of the web page for which you would like to take a screenshot",
+                    "tooltip": "Provide the URL of the web page for which you would like to take a screenshot",
                     "visible": true,
                     "editable": true,
                     "required": true
@@ -49,9 +55,6 @@
                 "code_output": {}
             },
             "enabled": true
-        }        
-    ],
-    "category": "utilities",
-    "active": true,
-    "cs_compatible": true
+        }
+    ]
 }
