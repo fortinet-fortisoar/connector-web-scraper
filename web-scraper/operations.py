@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-logger = get_logger('web_scraper')
+logger = get_logger('web-scraper')
 PAGE_LOAD_TIMEOUT = 20
 
 def url_parser(params):
