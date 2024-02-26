@@ -1,3 +1,10 @@
+"""
+Copyright start
+MIT License
+Copyright (c) 2023 Fortinet Inc
+Copyright end
+"""
+
 from connectors.core.connector import get_logger, ConnectorError
 from connectors.cyops_utilities.builtins import upload_file_to_cyops
 import os
