@@ -3,8 +3,8 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Web Scraper - 2.4.0",
-      "description": null,
+      "name": "Sample - Web Scraper - 1.0.0",
+      "description": "Web scraping is data scraping used for extracting data from websites. This connector facilitates automated operations related to extracting data from websites",
       "visible": true,
       "image": null,
       "uuid": "85858331-7b7f-4745-8320-651a7347177a",
