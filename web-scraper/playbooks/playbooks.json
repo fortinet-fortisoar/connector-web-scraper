@@ -4,11 +4,11 @@
     {
       "@type": "WorkflowCollection",
       "name": "Sample - Web Scraper - 1.0.0",
-      "description": "Sample playbooks for \"Web Scraper\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "description": "Web scraping is data scraping used for extracting data from websites. This connector facilitates automated operations related to extracting data from websites",
       "visible": true,
-      "image":"large_icon.png",
-      "uuid": "d555edd3-0728-473d-abd3-4a7836730242",
-      "id": 47,
+      "image": null,
+      "uuid": "85858331-7b7f-4745-8320-651a7347177a",
+      "id": 195,
       "deletedAt": null,
       "importedBy": [],
       "recordTags": [],
@@ -19,53 +19,26 @@
           "name": "Get Web Page Screenshot",
           "aliasName": null,
           "tag": null,
-          "description": null,
+          "description": "Takes a screenshot of a web page and creates an attachment in the FortiSOAR Attachment module",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1659024740,
-          "collection": "/api/3/workflow_collections/d555edd3-0728-473d-abd3-4a7836730242",
+          "lastModifyDate": 1708688794,
+          "collection": "/api/3/workflow_collections/85858331-7b7f-4745-8320-651a7347177a",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/d0fb3290-6185-40c9-be7f-9da652a9ffc6",
+          "triggerStep": "/api/3/workflow_steps/cbf76a0b-2903-4317-9038-cb541feeed4c",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "1cb185ee-985b-4de4-b1a6-a372f648c1ed",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "d0fb3290-6185-40c9-be7f-9da652a9ffc6"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Web Page Source",
+              "name": "Get Web Page Screenshot",
               "description": null,
               "arguments": {
                 "name": "Web Scraper",
                 "params": {
-                  "url": "https://ping.eu"
+                  "url": "https://www.fortinet.com/"
                 },
                 "version": "1.0.0",
                 "connector": "web-scraper",
@@ -75,61 +48,23 @@
                 "step_variables": []
               },
               "status": null,
-              "top": "165",
-              "left": "125",
+              "top": "220",
+              "left": "400",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "63dc4fad-eb33-4fb6-a26b-59ca3184fc65"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Get Page Source",
-              "targetStep": "/api/3/workflow_steps/63dc4fad-eb33-4fb6-a26b-59ca3184fc65",
-              "sourceStep": "/api/3/workflow_steps/d0fb3290-6185-40c9-be7f-9da652a9ffc6",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "af154578-e925-4ce9-b7d5-ac0ae1c77713"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "00f8b3c2-3528-4b68-b57c-da901f782be8",
-          "id": 507,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": []
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Web Page Source",
-          "aliasName": null,
-          "tag": null,
-          "description": null,
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1659026391,
-          "collection": "/api/3/workflow_collections/d555edd3-0728-473d-abd3-4a7836730242",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/da660393-560e-47b5-871f-87c2ab088122",
-          "steps": [
+              "uuid": "cf2b9319-cc5f-47d2-997f-996678ea2d88"
+            },
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "f51a219b-0598-49ba-84c8-d46337e4bbc2",
+                "route": "8eb27e5f-ebcc-4166-9710-9232a3bb3785",
+                "title": "Web Scraper: Get Web Page Screenshot",
                 "resources": [
                   "alerts"
                 ],
+                "__triggerLimit": true,
                 "inputVariables": [],
                 "step_variables": {
                   "input": {
@@ -137,17 +72,67 @@
                     "records": "{{vars.input.records}}"
                   }
                 },
+                "triggerOnSource": true,
                 "executeButtonText": "Execute",
                 "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
                 "singleRecordExecution": false
               },
               "status": null,
-              "top": "30",
-              "left": "125",
+              "top": "40",
+              "left": "40",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "group": null,
-              "uuid": "da660393-560e-47b5-871f-87c2ab088122"
-            },
+              "uuid": "cbf76a0b-2903-4317-9038-cb541feeed4c"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Web Page Source",
+              "targetStep": "/api/3/workflow_steps/cf2b9319-cc5f-47d2-997f-996678ea2d88",
+              "sourceStep": "/api/3/workflow_steps/cbf76a0b-2903-4317-9038-cb541feeed4c",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "34a9ef2d-9ddb-4967-97c4-cd21d4f155bb"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "43c2e3be-09a2-4517-b444-32d3d24b052d",
+          "id": 2495,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Web",
+            "web-scraper"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Web Page Source",
+          "aliasName": null,
+          "tag": null,
+          "description": "Extract the source code of the web page for the given URL",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1708688766,
+          "collection": "/api/3/workflow_collections/85858331-7b7f-4745-8320-651a7347177a",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/c0c25da7-a853-4ca9-b33e-06577831ff42",
+          "steps": [
             {
               "@type": "WorkflowStep",
               "name": "Get Web Page Source",
@@ -155,7 +140,7 @@
               "arguments": {
                 "name": "Web Scraper",
                 "params": {
-                  "url": "ping.eu"
+                  "url": "https://www.google.com/"
                 },
                 "version": "1.0.0",
                 "connector": "web-scraper",
@@ -169,32 +154,74 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "7f9fd0d3-ea7e-4141-866e-e0b1bf144690"
+              "uuid": "29924053-20e8-455f-95fb-aca7a0b2fda8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "7d212eab-4f16-42ce-acf0-485356d13036",
+                "title": "Web Scraper: Get Web Page Source",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "c0c25da7-a853-4ca9-b33e-06577831ff42"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Get Page Source",
-              "targetStep": "/api/3/workflow_steps/7f9fd0d3-ea7e-4141-866e-e0b1bf144690",
-              "sourceStep": "/api/3/workflow_steps/da660393-560e-47b5-871f-87c2ab088122",
+              "name": "Start -> Get Web Page Source",
+              "targetStep": "/api/3/workflow_steps/29924053-20e8-455f-95fb-aca7a0b2fda8",
+              "sourceStep": "/api/3/workflow_steps/c0c25da7-a853-4ca9-b33e-06577831ff42",
               "label": null,
               "isExecuted": false,
-              "uuid": "d3fedf6c-c5ec-4ca4-9bde-e1a6cb44d564"
+              "group": null,
+              "uuid": "1cfdc2ec-d957-4070-903c-9fb497e7a40f"
             }
           ],
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "779cd606-e27f-4c76-8545-acf3108fd90d",
-          "id": 506,
+          "uuid": "574b6fad-53c8-4918-aa87-64f7123016e8",
+          "id": 2494,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
           "importedBy": [],
-          "recordTags": []
+          "recordTags": [
+            "Web",
+            "web-scraper"
+          ]
         }
       ]
     }
   ],
-  "exported_tags": []
+  "exported_tags": [
+    "Web",
+    "web-scraper"
+  ]
 }
